@@ -1,0 +1,35 @@
+.mrg {
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.box {
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .box {
+    grid-template-columns: auto;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .box {
+    grid-template-columns: auto;
+  }
+}
+.img {
+  margin-top: 10px;
+  padding: 10px;
+  width: 470px;
+  height: 300px;
+}
+.text-bold{
+  font-weight: bold;
+}
+
+

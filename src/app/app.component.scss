@@ -1,0 +1,57 @@
+.fixar-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: black;
+  color: white;
+  .nav {
+    // margin-top: 0px;
+    min-height: 5rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .nav-item {
+      padding-inline: 10px;
+      list-style-type: none;
+      cursor: pointer;
+    }
+  }
+}
+
+.body {
+  min-height: 36rem;
+  margin-top: 64px;
+}
+
+.global-footer {
+  min-height: 9.3rem;
+  background-color: black;
+  .footer {
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .footer-item {
+      margin-top: 1.5rem;
+      padding-inline: 10px;
+      list-style-type: none;
+      cursor: pointer;
+
+      .you {
+        color: red;
+      }
+
+      .insta {
+        color: white;
+      }
+      .face {
+        color: white;
+      }
+    }
+  }
+}

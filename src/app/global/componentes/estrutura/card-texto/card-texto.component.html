@@ -1,0 +1,73 @@
+<div class="mrg">
+  <div class="container  ">
+    <div class="row">
+      <div class="grid">
+        <div class="col ">
+          <div> <img [src]="foto" [alt]="" class="img"></div>
+          <div> {{ nome }}</div>
+        </div>
+        <div class="col">
+          <p *ngFor="let item of texto; let index = index" class="para" [ngClass]="{
+              'mestre':
+              item === 'Mestre Pastinha' ||
+              item === 'Mestre Bimba' ||
+              item === 'Breve História da capoeira' ||
+              item === 'Mestre Nininho' ||
+              item === 'Contramestre Barravento' ||
+              item === 'Contramestre Bandas' ||
+              item === 'Instrumentação' ||
+              item === 'Berimbau Berra-boi' ||
+              item === 'Berimbau Médio' ||
+              item === 'Violda'||
+              item === 'Atabaque'||
+              item === 'Pandeiro'||
+              item === 'Cronologia da capoeira'||
+              item === 'Século XVI'||
+              item === 'Século XVII'||
+              item === 'Século XVIII'||
+              item === 'Século XIX'||
+              item === 'Década de 1930'||
+              item === 'Década de 1940'||
+              item === 'Década de 1960'||
+              item === 'Década de 1980' ||
+              item === 'Década de 2000'
+
+            }">{{ item
+            }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- <div class="row mb-5" *ngIf="half">
+    <div class="col-5">
+      <div>
+        <img [src]="foto" [alt]="" class="img">
+      </div>
+      <div>
+        {{ nome }}
+      </div>
+    </div>
+    <div class="col-7">
+      <div *ngFor="let item of texto; let index = index">
+        <p>{{ item }}</p>
+      </div>
+    </div>
+  </div>-->
+
+
+<!--
+<div class=" mrg">
+  <div class="container-fluid  ">
+    <div class="row ">
+      <div class="box col">
+        <img [src]="foto" alt="" class="img">
+        <div *ngFor="let item of texto">
+          <p class="">{{ item }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+-->

@@ -1,0 +1,67 @@
+<div class="fixar-nav">
+  <ul class="nav">
+    <li class="nav-item" routerLink="/agbara"><img src="assets/fotos/8.jpg" width="35" height="35" alt=""></li>
+    <li class="nav-item">
+      <span [matMenuTriggerFor]="historia">História</span>
+      <mat-menu #historia="matMenu">
+        <button mat-menu-item routerLink="/historia/capoeira">Capoeira</button>
+        <button mat-menu-item routerLink="/historia/grupo">Grupo Agbara</button>
+        <button mat-menu-item routerLink="/historia/mestre">Mestre Nininho</button>
+        <button mat-menu-item routerLink="/historia/contra-mestre">Contramestres</button>
+        <button mat-menu-item routerLink="/historia/professor">Professores</button>
+        <button mat-menu-item routerLink="/historia/instrumentacao">Instrumentação</button>
+      </mat-menu>
+    </li>
+    <li class="nav-item" routerLink="/graduacao">Graduações</li>
+    <li class="nav-item" routerLink="/videos">Videos</li>
+    <li class="nav-item" routerLink="/fotos">Fotos</li>
+    <li class="nav-item" routerLink="/loja">Loja</li>
+    <li class="nav-item" routerLink="/eventos">Eventos</li>
+    <li class="nav-item" routerLink="/locais-de-treino">Locais de treino</li>
+    <!--<li class="nav-item" routerLink="/contactos">Contactos </li>-->
+  </ul>
+</div>
+
+<div class="body">
+  <router-outlet></router-outlet>
+</div>
+
+<div class="global-footer">
+  <div class="footer">
+    <div class="footer-item">
+      &copy; {{ anoAtual }} Grupo Capoeira Agbara. Todos os direitos reservados.
+    </div>
+    <div class="footer-item">
+      <a class="insta" href="https://www.instagram.com">
+        <i class="bi bi-instagram"></i></a>
+    </div>
+    <div class="footer-item">
+      <a class="face" href="https://www.facebook.com">
+        <i class="bi bi-facebook"></i></a>
+    </div>
+
+    <div class="footer-item">
+      <a class="you" href="https://www.youtube.com"><i class="bi bi-youtube"></i></a>
+    </div>
+
+  </div>
+  <div class="footer">
+    <div class="footer-item">
+      <div>Mestre Nininho</div>
+      <div><i class="bi bi-phone"></i> 987 654 321</div>
+    </div>
+    <div class="footer-item">
+      <div>CM Bandas</div>
+      <div><i class="bi bi-phone"></i> 987 654 321</div>
+    </div>
+    <div class="footer-item">
+      <div>CM Barravento</div>
+      <div><i class="bi bi-phone"></i> 987 654 321</div>
+    </div>
+    <div class="footer-item">
+      <div>Professora Sú</div>
+      <div><i class="bi bi-phone"></i> 987 654 321</div>
+    </div>
+
+  </div>
+</div>

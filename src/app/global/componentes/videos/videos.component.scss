@@ -1,0 +1,53 @@
+.grid-item {
+  width: 100%;
+}
+.mrg {
+  margin-top: 100px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+justify-content: space-between;
+text-align: center;
+
+}
+.you-tube {
+  width: 530px;
+  height: 315px;
+}
+
+@media screen and (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .you-tube {
+    gap: 20px;
+    width: 470px;
+    height: 315px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .you-tube {
+    margin-inline: 15px;
+    width: 95%;
+    height: 371px;
+  }
+}
+@media screen and (max-width: 567px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .you-tube {
+    margin-inline: 5px;
+    width: 96%;
+    height: 243px;
+  }
+}

@@ -1,0 +1,29 @@
+.grid {
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 10px;
+
+  .grid-item {
+    height: 320px;
+    width: 350px;
+    justify-content: space-between;
+    background-color: black;
+  }
+
+  .img {
+    height: 320px;
+    width: 350px;
+  }
+}
+
+.grid-video {
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+}
+
+.mrg {
+  margin-top: 100px;
+}

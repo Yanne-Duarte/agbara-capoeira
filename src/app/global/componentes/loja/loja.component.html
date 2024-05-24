@@ -1,0 +1,9 @@
+<div class="container-fluid  ">
+  <div class="row row-cols-auto tm">
+    <div class="col col-w" *ngFor="let item of items">
+    <img [src]="item.img" alt="" class="img">
+    <div>{{ item.nome }}</div>
+    <div>{{ item.tam }}</div>
+  </div>
+  </div>
+</div>
