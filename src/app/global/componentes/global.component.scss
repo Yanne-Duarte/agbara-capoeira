@@ -1,0 +1,29 @@
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+.menu-lateral ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-lateral li {
+  margin-bottom: 10px;
+}
+
+.menu-lateral a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.conteudo {
+  margin-left: 220px; /* Ajuste conforme a largura do menu lateral */
+  padding: 20px;
+}

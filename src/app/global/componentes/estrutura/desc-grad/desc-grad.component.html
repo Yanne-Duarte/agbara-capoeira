@@ -1,0 +1,7 @@
+<div class="d-flex " mt-3 mb-5>
+  <img [src]="src" alt="" height="50px" width="35px">
+  <ul>
+    <li *ngFor="let item of topicosArray; let id = index" [ngClass]="{'first-item': id === 0}">{{ item }}</li>
+
+  </ul>
+</div>

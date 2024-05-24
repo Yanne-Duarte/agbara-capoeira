@@ -1,0 +1,39 @@
+.mrg {
+  margin-top: 100px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 100%;
+}
+.box {
+  text-align: center;
+}
+.img {
+  height: 250px;
+  width: 250px;
+}
+.para{
+  text-align: justify;
+}
+
+@media screen and (max-width: 992px) {
+  .grid {
+    grid-template-columns: auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  .grid {
+    grid-template-columns: auto;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .grid {
+    grid-template-columns: auto;
+  }
+}
+
+.mestre{
+  font-weight: bold;
+}

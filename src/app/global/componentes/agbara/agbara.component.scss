@@ -1,0 +1,168 @@
+.grid {
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+}
+
+@media screen and (max-width: 992px) {
+  .grid {
+    grid-template-columns: auto auto auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  .grid {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .grid {
+    grid-template-columns: auto;
+  }
+}
+
+.timeline1 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+.timeline {
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.year {
+  width: 50px;
+  height: 50px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.line {
+  flex: 1;
+  height: 2px;
+  background-color: #000;
+}
+
+.format-icon {
+  border: 5px solid yellow;
+  border-radius: 16px;
+  width: 250px;
+  height: 50px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.motivo {
+  text-align: center;
+  width: 250px;
+  height: max-content;
+  font-weight: bold;
+}
+
+.desc {
+  font-size: small;
+  text-align: center;
+  width: 250px;
+  height: max-content;
+}
+
+.imgEventos {
+  width: 500px;
+  height: 567px;
+  margin-inline: 20px;
+}
+.maisVideos {
+  width: 720px;
+  height: 420px;
+  margin-inline: 20px;
+}
+
+.min-heigth {
+  min-height: 20rem;
+}
+.min-ecra {
+}
+
+.motivos-size {
+  min-height: 36rem;
+  background-color: RED;
+  color: white;
+}
+
+.grids-motivos {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 992px) {
+  .grids-motivos {
+    grid-template-columns: auto auto auto;
+  }
+  .min-ecra {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grids-motivos {
+    grid-template-columns: auto auto;
+  }
+  .min-ecra {
+    display: flex;
+  }
+  .timeline {
+    display: block;
+  }
+ 
+}
+@media screen and (max-width: 567px) {
+  .grids-motivos {
+    grid-template-columns: auto;
+  }
+  .min-ecra {
+    display: block;
+  }
+}
+
+/* Estilos globais */
+.right,
+.down {
+  // font-size: 2rem; /* Ajuste o tamanho conforme necessário */
+}
+
+/* Mostrar ícone grande apenas em telas maiores que 700px */
+@media (min-width: 768px) {
+  .right {
+    display: inline;
+  }
+  .down {
+    display: none;
+  }
+
+
+}
+
+/* Mostrar ícone pequeno apenas em telas de 700px ou menores */
+@media (max-width: 767px) {
+  .right {
+    display: none;
+  }
+  .down {
+    display: inline;padding-left: 16px;
+  }
+}
+
+.eventos-cartaz{
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+}

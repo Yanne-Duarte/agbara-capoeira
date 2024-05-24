@@ -1,0 +1,12 @@
+<!--div class="mt-5 mb-3"></div>
+<app-card-img-video [isFoto]="true" [array]="arrayFotos"></app-card-img-video>
+-->
+
+<div class=" mrg">
+  <div class="container-fluid  ">
+    <div class="row ">
+      <div class="box col" *ngFor="let item of arrayFotos">
+        <img [src]="item.src" alt="" class="img">
+      </div>
+    </div>
+  </div>
