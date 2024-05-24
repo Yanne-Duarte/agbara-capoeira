@@ -43,7 +43,8 @@ Thumbs.db
 
 
 .gitignore
-node_modules/
-vscode/
-public/
+.node_modules/*
+.node_modules/*
+.vscode/*
+
 
