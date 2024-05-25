@@ -1,16 +1,20 @@
-# The Docker image that will be used to build your app
+# Define a imagem Docker que será usada para construir o aplicativo
 image: node:lts
-# Functions that should be executed before the build script is run
+
+# Funções que devem ser executadas antes do script de construção
 before_script:
   - npm install
+
+# Definição das configurações para a implantação do GitLab Pages
 pages:
   script:
+    # Comando para construir o aplicativo
     - npm run build
   artifacts:
+    # Define os arquivos que serão expostos na URL da página
     paths:
-      # The folder that contains the files to be exposed at the Page URL
       - public
   rules:
-    # This ensures that only pushes to the default branch will trigger
-    # a pages deploy
+    # Esta regra garante que apenas commits no branch padrão acionarão
+    # a implantação das páginas
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
