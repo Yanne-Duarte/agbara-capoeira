@@ -3,13 +3,14 @@ image: node:lts
 
 # Funções que devem ser executadas antes do script de construção
 before_script:
+  - node -v # Verifica a versão do Node.js
   - npm install
 
 # Definição das configurações para a implantação do GitLab Pages
 pages:
   script:
     # Comando para construir o aplicativo
-    - npm run build -- --prod
+    - npm run build --configuration production
   artifacts:
     # Define os arquivos que serão expostos na URL da página
     paths:
