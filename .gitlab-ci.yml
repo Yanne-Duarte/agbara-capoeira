@@ -9,11 +9,11 @@ before_script:
 pages:
   script:
     # Comando para construir o aplicativo
-    - npm run build
+    - npm run build -- --prod
   artifacts:
     # Define os arquivos que serão expostos na URL da página
     paths:
-      - public
+      - dist/agbara-capoeira
   rules:
     # Esta regra garante que apenas commits no branch padrão acionarão
     # a implantação das páginas
