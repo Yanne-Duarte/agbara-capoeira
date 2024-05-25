@@ -14,6 +14,7 @@ pages:
   artifacts:
     # Define os arquivos que serão expostos na URL da página
     paths:
+      - public/
       - dist/agbara-capoeira
   rules:
     # Esta regra garante que apenas commits no branch padrão acionarão
