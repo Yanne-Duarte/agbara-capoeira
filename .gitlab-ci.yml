@@ -11,7 +11,7 @@ build:
   script:
     - npm install -g @angular/cli
     - npm install # ou o comando que você usa para instalar dependências
-    - npm run build --prod --base-href /agbara/  # ou o comando que você usa para buildar o projeto
+    - npm run build --prod --base-href agbara-capoeira  # ou o comando que você usa para buildar o projeto
   artifacts:
     paths:
       - public/ # Certifique-se de que esta é a pasta onde os arquivos estáticos são gerados
