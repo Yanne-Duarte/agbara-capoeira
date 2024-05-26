@@ -9,6 +9,7 @@ stages:
 build:
   stage: build
   script:
+    - npm install -g @angular/cli
     - npm install # ou o comando que você usa para instalar dependências
     - npm run build # ou o comando que você usa para buildar o projeto
   artifacts:
@@ -17,6 +18,10 @@ build:
 
 # Job de deploy para o GitLab Pages
 pages:
+  cache:
+    paths:
+      - node_modules/
+
   stage: deploy
   script:
     - echo "Deploying to GitLab Pages..."
@@ -25,3 +30,4 @@ pages:
       - public
   only:
     - main # Ou a branch que você usa para deploy
+    - pages
