@@ -49,18 +49,6 @@ export class LojaComponent {
     { nome: 'Berimbau', img: 'assets/fotos/l4.png', tam: 's - m - l - xl' },
     { nome: 'Berimbau', img: 'assets/fotos/l5.png', tam: 's - m - l - xl' },
     { nome: 'Berimbau', img: 'assets/fotos/l6.png', tam: 's - m - l - xl' },
-    { nome: 'Berimbau', img: 'assets/fotos/l7.png', tam: 's - m - l - xl' },
-    { nome: 'Berimbau', img: 'assets/fotos/l8.png', tam: 's - m - l - xl' },
-    { nome: 'Berimbau', img: 'assets/fotos/l9.png', tam: 's - m - l - xl' },
-
-    { nome: 'Berimbau', img: 'assets/fotos/l1.png', tam: 's - m - l - xl' },
-    { nome: 'Berimbau', img: 'assets/fotos/l2.png', tam: 's - m - l - xl' },
-    { nome: 'Berimbau', img: 'assets/fotos/l3.png', tam: 's - m - l - xl' },
-    { nome: 'Berimbau', img: 'assets/fotos/l4.png', tam: 's - m - l - xl' },
-    { nome: 'Berimbau', img: 'assets/fotos/l5.png', tam: 's - m - l - xl' },
-    { nome: 'Berimbau', img: 'assets/fotos/l6.png', tam: 's - m - l - xl' },
-    { nome: 'Berimbau', img: 'assets/fotos/l7.png', tam: 's - m - l - xl' },
-    { nome: 'Berimbau', img: 'assets/fotos/l8.png', tam: 's - m - l - xl' },
-    { nome: 'Berimbau', img: 'assets/fotos/l9.png', tam: 's - m - l - xl' },
+    { nome: 'Berimbau', img: 'assets/fotos/l7.png', tam: 's - m - l - xl' }, 
   ]
 }
