@@ -59,227 +59,31 @@ export class GraduacoesComponent {
     { foto: 'assets/fotos/c4.png', desc: ['Crua Cinza', 'Encontrar uma descriçao'] },
   ];
 
-/*
-  src_00 = 'assets/fotos/c4.png'
-  topico_00 = [
-    'Grão-Mestre',
-    'Branco',
-    'Um Mestre é um Mestre',
-  ];
-  src_0 = 'assets/fotos/c4.png'
-  topico_0 = [
-    'Mestre',
-    'Vermelho',
-    'Um Mestre é um Mestre',
-  ];
+  showAllColors = false;
+  itemsPerRow = 5; // número de items por linha
+  initialRows = 4; // número inicial de linhas para mostrar
 
-  src_1 = 'assets/fotos/c4.png'
-  topico_1 = [
-    'Contramestre',
-    'Branco-Vermelho',
-    'Um ContraMestre é um ContraMestre',
-  ];
+  get visibleCores() {
+    const cores = [
+      {nome: 'Branco', desc: this.desc0, bg: '#FFFFFF', text: '#000000'},
+      {nome: 'Vermelho', desc: this.desc1, bg: '#FF0000', text: '#FFFFFF'},
+      {nome: 'Vinho', desc: this.desc11, bg: '#722F37', text: '#FFFFFF'},
+      {nome: 'Marrom', desc: this.desc2, bg: '#8B4513', text: '#FFFFFF'},
+      {nome: 'Roxo', desc: this.desc3, bg: '#800080', text: '#FFFFFF'},
+      {nome: 'Azul', desc: this.desc4, bg: '#0000FF', text: '#FFFFFF'},
+      {nome: 'Verde', desc: this.desc5, bg: '#008000', text: '#FFFFFF'},
+      {nome: 'Laranja', desc: this.desc6, bg: '#FFA500', text: '#000000'},
+      {nome: 'Amarela', desc: this.desc7, bg: '#FFFF00', text: '#000000'},
+      {nome: 'Cinza', desc: this.desc8, bg: '#808080', text: '#FFFFFF'}
+    ];
 
-  src_2 = 'assets/fotos/c4.png'
-  topico_2 = [
-    'Professor',
-    'Marrom',
-    'Um professor é um professor',
-  ];
+    if (this.showAllColors) {
+      return cores;
+    }
+    return cores.slice(0, this.itemsPerRow * this.initialRows);
+  }
 
-  src_3 = 'assets/fotos/c4.png'
-  topico_3 = [
-    'Roxo-Marrom',
-    'Em estágio',
-  ];
-  //
-  src_4 = 'assets/fotos/c4.png'
-  topico_4 = [
-    'Roxo',
-    'Um Aluno graduado procura do que é ser mestre de capoeira',
-  ];
-
-  src_5 = 'assets/fotos/c4.png'
-  topico_5 = [
-    'Azul-Roxo',
-    'Em estágio',
-  ];
-  //
-  src_6 = 'assets/fotos/c4.png'
-  topico_6 = [
-    'Azul',
-    'Encontrar uma descriçao',
-  ];
-  //
-  src_7 = 'assets/fotos/c4.png'
-  topico_7 = [
-    'Verde-Azul',
-    'Em estágio',
-  ];
-  src_8 = 'assets/fotos/c4.png'
-  topico_8 = [
-    'Verde',
-    'Encontrar uma descriçao',
-  ];
-
-  src_9 = 'assets/fotos/c4.png'
-  topico_9 = [
-    'Laranja-Verde',
-    'Em estágio',
-  ];
-
-  src_10 = 'assets/fotos/c4.png'
-  topico_10 = [
-    'Laranja',
-    'Em estágio',
-  ];
-
-  src_11 = 'assets/fotos/c4.png'
-  topico_11 = [
-    'Amarela-Laranja',
-    'Encontrar uma descriçao',
-  ];
-
-  src_12 = 'assets/fotos/c4.png'
-  topico_12 = [
-    'Amarela',
-    'Em estágio',
-  ];
-
-  src_13 = 'assets/fotos/c4.png'
-  topico_13 = [
-    'Cinza-Amarela',
-    'Encontrar uma descriçao',
-  ];
-
-  src_14 = 'assets/fotos/c4.png'
-  topico_14 = [
-    'Cinza',
-    'Aluno adulto iniciante',
-  ];
-
-
-
-
-  src_20 = 'assets/fotos/c4.png';
-  topico_20 = [
-    'Ponta Marrom',
-    'Encontrar uma descriçao'
-  ]
-
-  src_21 = 'assets/fotos/c4.png';
-  topico_21 = [
-    'Ponta Marrom-Roxo',
-    'Em estágio'
-  ]
-
-
-  src_22 = 'assets/fotos/c4.png';
-  topico_22 = [
-    'Ponta Roxa',
-    'Encontrar uma descriçao'
-  ]
-
-
-
-  src_23 = 'assets/fotos/c4.png';
-  topico_23 = [
-    'Ponta Azul-Roxo',
-    'Em estágio'
-  ]
-
-
-
-  src_24 = 'assets/fotos/c4.png';
-  topico_24 = [
-    'Ponta Azul',
-    'Encontrar uma descriçao'
-  ]
-
-
-  src_25 = 'assets/fotos/c4.png';
-  topico_25 = [
-    'Ponta Verde-Azul',
-    'Em estágio'
-  ]
-
-
-
-  src_26 = 'assets/fotos/c4.png';
-  topico_26 = [
-    'Ponta Verde',
-    'Encontrar uma descriçao'
-  ]
-
-
-
-  src_27 = 'assets/fotos/c4.png';
-  topico_27 = [
-    'Ponta Laranja-Verde',
-    'Em estágio'
-  ]
-
-
-  src_28 = 'assets/fotos/c4.png';
-  topico_28 = [
-    'Ponta Laranja',
-    'Encontrar uma descriçao'
-  ]
-
-
-  src_29 = 'assets/fotos/c4.png';
-  topico_29 = [
-    'Ponta Amarela-Laranja',
-    'Em estágio'
-  ]
-
-  src_30 = 'assets/fotos/c4.png';
-  topico_30 = [
-    'Ponta Amarela',
-    'Encontrar uma descriçao'
-  ]
-  src_31 = 'assets/fotos/c4.png';
-  topico_31 = [
-    'Ponta Cinza',
-    'Encontrar uma descriçao'
-  ]
-
-  src_40 = 'assets/fotos/c4.png';
-  topico_40 = [
-    'Crua Marrom ',
-    'Encontrar uma descriçao'
-  ]
-  src_41 = 'assets/fotos/c4.png';
-  topico_41 = [
-    'Crua Roxa ',
-    'Encontrar uma descriçao'
-  ]
-  src_42 = 'assets/fotos/c4.png';
-  topico_42 = [
-    'Crua Azul ',
-    'Encontrar uma descriçao'
-  ]
-
-  src_43 = 'assets/fotos/c4.png';
-  topico_43 = [
-    'Crua Verde ',
-    'Encontrar uma descriçao'
-  ]
-
-  src_44 = 'assets/fotos/c4.png';
-  topico_44 = [
-    'Crua Laranja ',
-    'Encontrar uma descriçao'
-  ]
-  src_45 = 'assets/fotos/c4.png';
-  topico_45 = [
-    'Crua Amarela ',
-    'Encontrar uma descriçao'
-  ]
-  src_46 = 'assets/fotos/c4.png';
-  topico_46 = [
-    'Crua Cinza ',
-    'Encontrar uma descriçao'
-  ]
-*/
+  toggleShowAll() {
+    this.showAllColors = !this.showAllColors;
+  }
 }

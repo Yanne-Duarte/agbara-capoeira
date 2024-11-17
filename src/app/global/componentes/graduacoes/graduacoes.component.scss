@@ -1,61 +1,50 @@
-.titulo {
-  color: #8A72B1;
+// Variáveis
+$primary: #8A72B1;
+$secondary: #7BA66B;
+$accent: #F1AA9F;
+$dark: #470F0F;
+$light: #8F2323;
+$white: #fff;
+$gray-light: #fafafa;
+$transition: all 0.3s ease;
+
+.graduacoes-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: $gray-light;
 }
 
-.background {
-  background-color: #7BA66B;
-}
-
-.botao {
-  background-color: #F1AA9F;
-  color: #fff;
-}
-
-.texto {
-  color: #470F0F;
-}
-
-.paragrafo {
-  color: #8F2323;
-}
-
-.nav {
-  background-color: #fff;
-  color: #000;
-}
-.bold {
-  font-weight: bold;
-}
-
-ul {
-  li {
-    padding-block: 8px;
-    text-align: justify;
-  }
-}
-
+// Seção de Cores
 .cores-section {
-  padding: 3rem 0;
-  background: #fafafa;
+  margin-bottom: 4rem;
+  background: $white;
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 2.5rem;
-}
+  margin-bottom: 3rem;
+  position: relative;
 
-.section-title {
-  font-size: 2rem;
-  color: #470F0F;
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
+  .section-title {
+    font-size: 2.5rem;
+    color: $dark;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
 
-.title-underline {
-  height: 3px;
-  width: 100px;
-  background: linear-gradient(to right, #8A72B1, #7BA66B);
-  margin: 0 auto;
+  .title-underline {
+    height: 4px;
+    width: 120px;
+    margin: 0 auto;
+    background: linear-gradient(45deg, $primary, $secondary);
+    border-radius: 2px;
+  }
 }
 
 .section-intro {
@@ -64,79 +53,192 @@ ul {
   text-align: center;
 
   p {
-    color: #8F2323;
-    line-height: 1.6;
     font-size: 1.1rem;
+    line-height: 1.8;
+    color: $light;
   }
 }
 
 .cores-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   gap: 1.5rem;
   padding: 0 1rem;
+  transition: $transition;
 }
 
 .cor-card {
-  background: white;
-  border-radius: 8px;
+  background: $white;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: $transition;
+  min-width: 0;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  }
+
+  .cor-stripe {
+    height: 8px;
+    width: 100%;
+  }
+
+  .cor-content {
+    padding: 1rem;
+
+    .cor-nome {
+      font-size: 1rem;
+      color: $dark;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .cor-desc {
+      color: $light;
+      line-height: 1.4;
+      font-size: 0.85rem;
+      text-align: justify;
+    }
   }
 }
 
-.cor-header {
-  padding: 1rem;
+.expand-button-container {
   text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  position: relative;
 
-  .cor-nome {
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: 600;
-    text-transform: uppercase;
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
+    pointer-events: none;
+    opacity: 0.8;
   }
 }
 
-.cor-content {
-  padding: 1.5rem;
-  background: white;
+.expand-button {
+  padding: 0.8rem 2rem;
+  border: none;
+  background: $primary;
+  color: $white;
+  border-radius: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: $transition;
 
-  p {
-    margin: 0;
-    color: #470F0F;
-    line-height: 1.6;
-    font-size: 0.95rem;
-    text-align: justify;
+  &:hover {
+    background: darken($primary, 10%);
+    transform: translateY(-2px);
   }
 }
 
-// Media queries para responsividade
+// Seção de Graduações
+.graduacoes-section {
+  background: $white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tabs-container {
+  .tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+    .tab-btn {
+      padding: 0.8rem 2rem;
+      border: none;
+      background: $accent;
+      color: $white;
+      border-radius: 25px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: $transition;
+
+      &:hover {
+        background: darken($accent, 10%);
+      }
+
+      &.active {
+        background: $primary;
+      }
+    }
+  }
+}
+
+.graduacoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+
+  .grad-card {
+    display: block;
+    transition: $transition;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+// Responsividade
+@media (max-width: 1200px) {
+  .cores-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .cores-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .cores-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .cores-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .graduacoes-container {
+    padding: 1rem;
   }
 
   .section-title {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
 
-  .section-intro p {
-    font-size: 1rem;
+  .cores-grid, .graduacoes-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .cores-grid {
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .cores-grid, .graduacoes-grid {
     grid-template-columns: 1fr;
   }
 
   .cor-card {
-    margin: 0 1rem;
+    margin: 0 0.5rem;
   }
 }

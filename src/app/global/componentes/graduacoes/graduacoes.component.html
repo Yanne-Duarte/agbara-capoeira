@@ -1,8 +1,8 @@
-<div class="container">
+<div class="graduacoes-container">
   <!-- Seção Significado das Cores -->
   <section class="cores-section">
     <div class="section-header">
-      <h2 class="section-title">SIGNIFICADO DAS CORES NA CAPOEIRA</h2>
+      <h2 class="section-title">Significado das Cores na Capoeira</h2>
       <div class="title-underline"></div>
     </div>
 
@@ -12,61 +12,34 @@
     </div>
 
     <div class="cores-grid">
-      <div class="cor-card" *ngFor="let cor of [
-        {nome: 'Branco', desc: desc0, bg: '#FFFFFF', text: '#000000'},
-        {nome: 'Vermelho', desc: desc1, bg: '#FF0000', text: '#FFFFFF'},
-        {nome: 'Vinho', desc: desc11, bg: '#722F37', text: '#FFFFFF'},
-        {nome: 'Marrom', desc: desc2, bg: '#8B4513', text: '#FFFFFF'},
-        {nome: 'Roxo', desc: desc3, bg: '#800080', text: '#FFFFFF'},
-        {nome: 'Azul', desc: desc4, bg: '#0000FF', text: '#FFFFFF'},
-        {nome: 'Verde', desc: desc5, bg: '#008000', text: '#FFFFFF'},
-        {nome: 'Laranja', desc: desc6, bg: '#FFA500', text: '#000000'},
-        {nome: 'Amarela', desc: desc7, bg: '#FFFF00', text: '#000000'},
-        {nome: 'Cinza', desc: desc8, bg: '#808080', text: '#FFFFFF'}
-      ]">
-        <div class="cor-header" [style.background-color]="cor.bg">
-          <h3 class="cor-nome" [style.color]="cor.text">{{cor.nome}}</h3>
-        </div>
+      <div class="cor-card" *ngFor="let cor of visibleCores">
+        <div class="cor-stripe" [style.background-color]="cor.bg"></div>
         <div class="cor-content">
-          <p>{{cor.desc}}</p>
+          <h3 class="cor-nome">{{cor.nome}}</h3>
+          <p class="cor-desc">{{cor.desc}}</p>
         </div>
       </div>
+    </div>
+
+    <div class="expand-button-container">
+      <button class="expand-button" (click)="toggleShowAll()">
+        {{ showAllColors ? 'Ver menos' : 'Ver mais' }}
+      </button>
     </div>
   </section>
 
-  <!-- Resto do conteúdo permanece igual -->
-  <div class="row align-items-start">
-    <div class="col mt-4 me-3 ms-3">
-      <div class="mb-3 badge  ">
-        <h5>Adultos</h5>
+  <!-- Seção de Graduações -->
+  <section class="graduacoes-section">
+    <div class="tabs-container">
+      <div class="tab-buttons">
+        <button class="tab-btn active">Adultos</button>
       </div>
-      @for (item of list; track $index) {
-        <app-desc-grad [src]="item.foto" [topicosArray]="item.desc"></app-desc-grad>
-      }
-    </div>
-    <div class="col mt-4 me-3 ms-3">
-      <div class="mb-3 badge ">
-        <h5>Intermédios</h5>
+
+      <div class="graduacoes-grid">
+        @for (item of list; track $index) {
+          <app-desc-grad [src]="item.foto" [topicosArray]="item.desc" class="grad-card"></app-desc-grad>
+        }
       </div>
-      <app-desc-grad [src]="src_20" [topicosArray]="topico_20"></app-desc-grad>
-      <app-desc-grad [src]="src_22" [topicosArray]="topico_22"></app-desc-grad>
-      <app-desc-grad [src]="src_24" [topicosArray]="topico_24"></app-desc-grad>
-      <app-desc-grad [src]="src_26" [topicosArray]="topico_26"></app-desc-grad>
-      <app-desc-grad [src]="src_28" [topicosArray]="topico_28"></app-desc-grad>
-      <app-desc-grad [src]="src_30" [topicosArray]="topico_30"></app-desc-grad>
-      <app-desc-grad [src]="src_31" [topicosArray]="topico_31"></app-desc-grad>
     </div>
-    <div class="col mt-4 me-3 ms-3">
-      <div class="mb-3 badge ">
-        <h5>Crianças</h5>
-      </div>
-      <app-desc-grad [src]="src_40" [topicosArray]="topico_40"></app-desc-grad>
-      <app-desc-grad [src]="src_41" [topicosArray]="topico_41"></app-desc-grad>
-      <app-desc-grad [src]="src_42" [topicosArray]="topico_42"></app-desc-grad>
-      <app-desc-grad [src]="src_43" [topicosArray]="topico_43"></app-desc-grad>
-      <app-desc-grad [src]="src_44" [topicosArray]="topico_44"></app-desc-grad>
-      <app-desc-grad [src]="src_45" [topicosArray]="topico_45"></app-desc-grad>
-      <app-desc-grad [src]="src_46" [topicosArray]="topico_46"></app-desc-grad>
-    </div>
-  </div>
+  </section>
 </div>
