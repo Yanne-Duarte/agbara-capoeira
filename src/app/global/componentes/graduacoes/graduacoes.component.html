@@ -1,30 +1,40 @@
-<div class="container  ">
-  <div class="row align-items-start">
-    <div class="col ">
-      <div class="mt-5 mb-3">
-        <h4 class="text-center">SIGNIFICADO DAS CORES CAPOEIRA</h4>
-      </div>
-      <div class="text-justify"> As cores têm a capacidade de transmitir sensações que tanto podem relaxar como estimular, alegrar eu
-        entristecer as pessoas. Embora a seu significado seja universal, de acordo com cada cultura, cada cos pode
-        assumir aspectos diferentes. Na capocira as cores sewem para mostrar a grau dos alunos e também a sua cvolução.
-      </div>
-      <div>
-        <ul>
-          <li><span class="bold ">Branco</span> - {{desc0}}</li>
-          <li><span class="bold">Vermelho</span> - {{desc1}}</li>
-          <li><span class="bold">Vinho</span> - {{desc11}}</li>
-          <li><span class="bold">Marron</span> - {{desc2}}</li>
-          <li><span class="bold">Roxo</span> - {{desc3}}</li>
-          <li><span class="bold">Azul</span> - {{desc4}}</li>
-          <li><span class="bold">Verde</span> - {{desc5}}</li>
-          <li><span class="bold">Laranja</span> - {{desc6}}</li>
-          <li><span class="bold">Amarela</span> - {{desc7}}</li>
-          <li><span class="bold">Cinza</span> - {{desc8}}</li>
-        </ul>
+<div class="container">
+  <!-- Seção Significado das Cores -->
+  <section class="cores-section">
+    <div class="section-header">
+      <h2 class="section-title">SIGNIFICADO DAS CORES NA CAPOEIRA</h2>
+      <div class="title-underline"></div>
+    </div>
+
+    <div class="section-intro">
+      <p>As cores têm a capacidade de transmitir sensações que tanto podem relaxar como estimular, alegrar ou
+        entristecer as pessoas. Na capoeira, as cores servem para mostrar o grau dos alunos e também a sua evolução.</p>
+    </div>
+
+    <div class="cores-grid">
+      <div class="cor-card" *ngFor="let cor of [
+        {nome: 'Branco', desc: desc0, bg: '#FFFFFF', text: '#000000'},
+        {nome: 'Vermelho', desc: desc1, bg: '#FF0000', text: '#FFFFFF'},
+        {nome: 'Vinho', desc: desc11, bg: '#722F37', text: '#FFFFFF'},
+        {nome: 'Marrom', desc: desc2, bg: '#8B4513', text: '#FFFFFF'},
+        {nome: 'Roxo', desc: desc3, bg: '#800080', text: '#FFFFFF'},
+        {nome: 'Azul', desc: desc4, bg: '#0000FF', text: '#FFFFFF'},
+        {nome: 'Verde', desc: desc5, bg: '#008000', text: '#FFFFFF'},
+        {nome: 'Laranja', desc: desc6, bg: '#FFA500', text: '#000000'},
+        {nome: 'Amarela', desc: desc7, bg: '#FFFF00', text: '#000000'},
+        {nome: 'Cinza', desc: desc8, bg: '#808080', text: '#FFFFFF'}
+      ]">
+        <div class="cor-header" [style.background-color]="cor.bg">
+          <h3 class="cor-nome" [style.color]="cor.text">{{cor.nome}}</h3>
+        </div>
+        <div class="cor-content">
+          <p>{{cor.desc}}</p>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
+  <!-- Resto do conteúdo permanece igual -->
   <div class="row align-items-start">
     <div class="col mt-4 me-3 ms-3">
       <div class="mb-3 badge  ">
@@ -33,22 +43,6 @@
       @for (item of list; track $index) {
         <app-desc-grad [src]="item.foto" [topicosArray]="item.desc"></app-desc-grad>
       }
-      <!--<app-desc-grad [src]="src_00" [topicosArray]="topico_00"></app-desc-grad>
-      <app-desc-grad [src]="src_0" [topicosArray]="topico_0"></app-desc-grad>
-      <app-desc-grad [src]="src_1" [topicosArray]="topico_1"></app-desc-grad>
-      <app-desc-grad [src]="src_2" [topicosArray]="topico_2"></app-desc-grad>
-      <app-desc-grad [src]="src_3" [topicosArray]="topico_3"></app-desc-grad>
-      <app-desc-grad [src]="src_4" [topicosArray]="topico_4"></app-desc-grad>
-      <app-desc-grad [src]="src_5" [topicosArray]="topico_5"></app-desc-grad>
-      <app-desc-grad [src]="src_6" [topicosArray]="topico_6"></app-desc-grad>
-      <app-desc-grad [src]="src_7" [topicosArray]="topico_7"></app-desc-grad>
-      <app-desc-grad [src]="src_8" [topicosArray]="topico_8"></app-desc-grad>
-      <app-desc-grad [src]="src_9" [topicosArray]="topico_9"></app-desc-grad>
-      <app-desc-grad [src]="src_10" [topicosArray]="topico_10"></app-desc-grad>
-      <app-desc-grad [src]="src_11" [topicosArray]="topico_11"></app-desc-grad>
-      <app-desc-grad [src]="src_12" [topicosArray]="topico_12"></app-desc-grad>
-      <app-desc-grad [src]="src_13" [topicosArray]="topico_13"></app-desc-grad>
-      <app-desc-grad [src]="src_14" [topicosArray]="topico_14"></app-desc-grad>
     </div>
     <div class="col mt-4 me-3 ms-3">
       <div class="mb-3 badge ">
@@ -74,6 +68,5 @@
       <app-desc-grad [src]="src_45" [topicosArray]="topico_45"></app-desc-grad>
       <app-desc-grad [src]="src_46" [topicosArray]="topico_46"></app-desc-grad>
     </div>
-    -->
   </div>
 </div>
