@@ -20,6 +20,9 @@ export class GraduacoesComponent {
   desc7 = 'A cor amarela contribui para a felicidade. É uma cor brilhante, alegre, que simboliza a luxe - é come estar em festa a cada dia. Assecia-se com a parte intelectual da mente e a expressão de nesses pensamentos. É pertanto, a poder de discernir e discriminar, a memória e as ideias daras, poder de decisão e capacidade de julgar. Jambém nes ajuda a erganizar-nos, a assimilar as idcias inovadoras, e contribui para a habilidade de ver e compreender es diferentes pontos de vista. Palamas-chaves da cor amarda: felicidade, alegria, inteligência, inovação, energia, sol, fortaleza, poder.'
   desc8 = 'A cor cinza está asseciada à independência, à luta suficiência, as autocontrole: É uma cer que atua como um escudo contra as influências externas. Há palavras-chaves da cor cinza é, Estabilidade, Generosidade, Grande cense de organização, Detes humanitários, iselamento e Independência'
 
+
+  list = []
+
   src_00 = 'assets/fotos/c4.png'
   topico_00 = [
     'Grão-Mestre',
