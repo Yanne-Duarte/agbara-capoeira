@@ -34,3 +34,209 @@ ul
     text-align: justify;
   }
 }
+
+.graduacoes-wrapper {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// Seção de Cores
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  h2 {
+    font-size: 2rem;
+    color: #470F0F;
+    margin-bottom: 0.5rem;
+  }
+
+  .title-underline {
+    height: 3px;
+    width: 100px;
+    background: linear-gradient(to right, #8A72B1, #7BA66B);
+    margin: 0 auto;
+  }
+}
+
+.cores-description {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+
+  p {
+    color: #8F2323;
+    line-height: 1.6;
+  }
+}
+
+.cores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.cor-item {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.cor-header {
+  padding: 1rem;
+  text-align: center;
+
+  .cor-nome {
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  }
+}
+
+.cor-content {
+  padding: 1rem;
+  background: white;
+
+  p {
+    margin: 0;
+    color: #470F0F;
+    line-height: 1.4;
+  }
+}
+
+// Seção de Graduações
+.categorias-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.categoria-btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background: #F1AA9F;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: darken(#F1AA9F, 10%);
+  }
+
+  &.active {
+    background: #8A72B1;
+  }
+}
+
+.graduacoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.graduacao-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .card-image {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+    padding: 1rem;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &:hover {
+    .card-image img {
+      transform: scale(1.1);
+    }
+  }
+
+  .card-content {
+    padding: 1.5rem;
+
+    h3 {
+      color: #470F0F;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #eee;
+        color: #8F2323;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+// Responsividade
+@media (max-width: 768px) {
+  .graduacoes-wrapper {
+    padding: 1rem;
+  }
+
+  .section-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .cores-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .graduacoes-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .categoria-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .graduacao-card {
+    .card-image {
+      height: 120px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .graduacoes-grid {
+    grid-template-columns: 1fr;
+  }
+}

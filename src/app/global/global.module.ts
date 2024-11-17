@@ -46,7 +46,7 @@ import { ModalComponent } from './componentes/estrutura/modal/modal.component';
     LocaisTreinoComponent,
     VideosComponent,
     FotosComponent,
-    LojaComponent, 
+    LojaComponent,
     CardImgVideoComponent,
     CardTextoComponent,
     EventosComponent,

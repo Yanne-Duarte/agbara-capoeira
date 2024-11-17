@@ -1,29 +1,39 @@
 <app-carrousel [imagens]="imgs"></app-carrousel>
 
 <div class="m-5 justify-content-center align-items-center min-heigth">
-  <div class="mb-3  text-center">
-    <h3>Cronologia do Grupo</h3>
-  </div>
 
-  <div class="cronologia">
-    <div class="card-container" *ngFor="let item of cardsInformativas; let i = index">
-      <div class="card" [class.flipped]="expandedItems[i]">
 
-        <div class="card-front card-face text-center" (click)="toggleParagrafo(i)">
-          <div class="card-body">
-            <h5 class="card-title">{{ item.titulo }}</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">{{ item.ano }}</h6>
-          </div>
-        </div>
+  <div class="cronologia-container">
+    <div class="header-section">
+      <h2>Cronologia do Grupo</h2>
+      <div class="decorative-line"></div>
+    </div>
 
-        <div class="card-back card-face" (click)="toggleParagrafo(i)">
-          <div class="card-body">
-            <div *ngFor="let data of item.datas">
-              <p class="card-text"><b>{{ data.titulo }}</b> - {{ data.desc }}</p>
+    <div class="timeline-horizontal">
+      <div class="timeline-line"></div>
+
+      <div class="d-flex timeline-items">
+        <div class="timeline-item" *ngFor="let item of cardsInformativas; let i = index">
+          <div class="timeline-card" [class.active]="expandedItems[i]" (click)="toggleParagrafo(i)">
+            <div class="card-header">
+              <div class="header-content">
+                <span class="year">{{ item.ano }}</span>
+                <h3>{{ item.titulo }}</h3>
+              </div>
+              <div class="expand-icon">
+                <i class="bi" [class.bi-chevron-down]="!expandedItems[i]"
+                            [class.bi-chevron-up]="expandedItems[i]"></i>
+              </div>
+            </div>
+
+            <div class="card-content" [class.show]="expandedItems[i]">
+              <div class="event-item" *ngFor="let data of item.datas">
+                <h4>{{ data.titulo }}</h4>
+                <p>{{ data.desc }}</p>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -32,62 +42,157 @@
 
 
 
-<div class="  mb-3 justify-content-center align-items-center motivos-size">
-  <div class="text-center  mb-4 mt-5">
-    <h3  >Capoeira  Agbara ensina</h3>
+<div class="agbara-ensina-section">
+  <div class="section-header">
+    <h2>Capoeira Agbara Ensina</h2>
+    <div class="decorative-line"></div>
   </div>
-  <div class="container cronologia text-center">
-    <div class="col format-icon">
-      <div class=""><i class="fa-solid fa-dumbbell" style="color: #080808;"></i></div>
-      <div class="motivo">{{ motivo0}}</div>
-      <div class="desc">{{ desc0}}</div>
+
+  <div class="beneficios-grid">
+    <div class="beneficio-card">
+      <div class="icon-wrapper">
+        <i class="fa-solid fa-dumbbell"></i>
+      </div>
+      <h3>{{ motivo0 }}</h3>
+      <p>{{ desc0 }}</p>
     </div>
 
-    <div class="col format-icon">
-      <div class=""><i class="fa-solid fa-masks-theater" style="color: #0d0d0d;"></i></div>
-      <div class="motivo">{{ motivo2}}</div>
-      <div class="desc">{{ desc2}}</div>
+    <div class="beneficio-card">
+      <div class="icon-wrapper">
+        <i class="fa-solid fa-masks-theater"></i>
+      </div>
+      <h3>{{ motivo2 }}</h3>
+      <p>{{ desc2 }}</p>
     </div>
 
-    <div class="col format-icon">
-      <div class=""><i class="fa-solid fa-clipboard-list" style="color: #080808;"></i></div>
-      <div class="motivo">{{ motivo6}}</div>
-      <div class="desc">{{ desc6}}</div>
+    <div class="beneficio-card">
+      <div class="icon-wrapper">
+        <i class="fa-solid fa-clipboard-list"></i>
+      </div>
+      <h3>{{ motivo6 }}</h3>
+      <p>{{ desc6 }}</p>
     </div>
 
-    <div class="col format-icon">
-      <div class=""><i class="fa-solid fa-people-group" style="color: #030303;"></i></div>
-      <div class="motivo">{{ motivo3}}</div>
-      <div class="desc">{{ desc3}}</div>
+    <div class="beneficio-card">
+      <div class="icon-wrapper">
+        <i class="fa-solid fa-people-group"></i>
+      </div>
+      <h3>{{ motivo3 }}</h3>
+      <p>{{ desc3 }}</p>
     </div>
-    <div class="col format-icon">
-      <div class=""><i class="fa-solid fa-shield" style="color: #0c0d0d;"></i></div>
-      <div class="motivo">{{ motivo5}}</div>
-      <div class="desc">{{ desc5}}</div>
+
+    <div class="beneficio-card">
+      <div class="icon-wrapper">
+        <i class="fa-solid fa-shield"></i>
+      </div>
+      <h3>{{ motivo5 }}</h3>
+      <p>{{ desc5 }}</p>
     </div>
-    <div class="col format-icon">
-      <div class=""><i class="fa-solid fa-brain" style="color: #050505;"></i></div>
-      <div class="motivo">{{ motivo4}}</div>
-      <div class="desc">{{ desc4}}</div>
+
+    <div class="beneficio-card">
+      <div class="icon-wrapper">
+        <i class="fa-solid fa-brain"></i>
+      </div>
+      <h3>{{ motivo4 }}</h3>
+      <p>{{ desc4 }}</p>
     </div>
   </div>
 </div>
 
-<div class="text-center  justify-content-center align-items-center mb-5">
-  <h4 class="mb-3">Próximos eventos</h4>
-  <div class="eventos-cartaz">
-    <img src="assets/fotos/1.jpg" alt="" class="imgEventos">
-    <img src="assets/fotos/7.jpg" alt="" class="imgEventos">
+<div class="eventos-section">
+  <div class="section-header">
+    <h2>Próximos Eventos</h2>
+    <div class="decorative-line"></div>
   </div>
-  <button type="button" class="btn btn-outline-info mb-3" routerLink="['/eventos']"  >Mais eventos</button>
 
+  <div class="eventos-container">
+    <div class="evento-card">
+      <img src="assets/fotos/1.jpg" alt="Evento Capoeira" class="evento-img">
+      <div class="evento-info">
+        <h3>Nome do Evento</h3>
+        <div class="evento-detalhes">
+          <div class="detalhe">
+            <i class="bi bi-calendar-event"></i>
+            <span>Data: 20/04/2024</span>
+          </div>
+          <div class="detalhe">
+            <i class="bi bi-geo-alt"></i>
+            <span>Local: Centro Cultural</span>
+          </div>
+          <div class="detalhe">
+            <i class="bi bi-clock"></i>
+            <span>Horário: 15:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="evento-card">
+      <img src="assets/fotos/7.jpg" alt="Evento Capoeira" class="evento-img">
+      <div class="evento-info">
+        <h3>Nome do Evento</h3>
+        <div class="evento-detalhes">
+          <div class="detalhe">
+            <i class="bi bi-calendar-event"></i>
+            <span>Data: 15/05/2024</span>
+          </div>
+          <div class="detalhe">
+            <i class="bi bi-geo-alt"></i>
+            <span>Local: Ginásio Municipal</span>
+          </div>
+          <div class="detalhe">
+            <i class="bi bi-clock"></i>
+            <span>Horário: 14:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-4">
+    <button class="custom-button" routerLink="/eventos">
+      Ver Mais Eventos
+      <i class="bi bi-arrow-right"></i>
+    </button>
+  </div>
 </div>
 
-<div class="text-center  justify-content-center align-items-center ">
-  <h4 class="text-center mb-3">Videos</h4>
-  <div class="eventos-cartaz">
-    <iframe src="" class="maisVideos" src="https://www.youtube.com/embed/45WRBLS3BdE"></iframe>
-    <iframe src="" class="maisVideos" src="https://www.youtube.com/embed/zJWrk-ofepE"></iframe>
+<div class="videos-section">
+  <div class="section-header">
+    <h2>Vídeos em Destaque</h2>
+    <div class="decorative-line"></div>
   </div>
-  <button type="button" class="btn btn-outline-info mb-3"  routerLink="['/videos']" >Mais videos</button>
+
+  <div class="videos-container">
+    <div class="video-card">
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/45WRBLS3BdE"
+          title="Vídeo Capoeira"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/zJWrk-ofepE"
+          title="Vídeo Capoeira"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-4">
+    <button class="custom-button" routerLink="/videos">
+      Ver Mais Vídeos
+      <i class="bi bi-arrow-right"></i>
+    </button>
+  </div>
 </div>

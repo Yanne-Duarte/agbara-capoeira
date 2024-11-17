@@ -60,6 +60,6 @@ export class AgbaraComponent implements OnInit {
   expandedItems: boolean[] = [];
 
   toggleParagrafo(index: number): void {
-    this.expandedItems[index] = !this.expandedItems[index];
+    this.expandedItems = this.expandedItems.map((item, i) => i === index ? !item : false);
   }
 }
