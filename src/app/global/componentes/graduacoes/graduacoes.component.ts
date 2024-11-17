@@ -21,8 +21,45 @@ export class GraduacoesComponent {
   desc8 = 'A cor cinza está asseciada à independência, à luta suficiência, as autocontrole: É uma cer que atua como um escudo contra as influências externas. Há palavras-chaves da cor cinza é, Estabilidade, Generosidade, Grande cense de organização, Detes humanitários, iselamento e Independência'
 
 
-  list = []
+  list = [
+    { foto: 'assets/fotos/c4.png', desc: ['Grão-Mestre', 'Branco', 'Um Mestre é um Mestre'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Mestre', 'Vermelho', 'Um Mestre é um Mestre'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Contramestre', 'Branco-Vermelho', 'Um ContraMestre é um ContraMestre'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Professor', 'Marrom', 'Um professor é um professor'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Roxo-Marrom', 'Em estágio'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Roxo', 'Um Aluno graduado procura do que é ser mestre de capoeira'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Azul-Roxo', 'Em estágio'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Azul', 'Encontrar uma descriçao'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Verde-Azul', 'Em estágio'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Verde', 'Encontrar uma descriçao'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Laranja-Verde', 'Em estágio'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Laranja', 'Em estágio'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Amarela-Laranja', 'Encontrar uma descriçao'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Amarela', 'Em estágio'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Cinza-Amarela', 'Encontrar uma descriçao'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Cinza', 'Aluno adulto iniciante'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Ponta Marrom', 'Encontrar uma descriçao'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Ponta Marrom-Roxo', 'Em estágio'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Ponta Roxa', 'Encontrar uma descriçao'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Ponta Azul-Roxo', 'Em estágio'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Ponta Azul', 'Encontrar uma descriçao'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Ponta Verde-Azul', 'Em estágio'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Ponta Verde', 'Encontrar uma descriçao'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Ponta Laranja-Verde', 'Em estágio'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Ponta Laranja', 'Encontrar uma descriçao'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Ponta Amarela-Laranja', 'Em estágio'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Ponta Amarela', 'Encontrar uma descriçao'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Ponta Cinza', 'Encontrar uma descriçao'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Crua Marrom', 'Encontrar uma descriçao'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Crua Roxa', 'Encontrar uma descriçao'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Crua Azul', 'Encontrar uma descriçao'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Crua Verde', 'Encontrar uma descriçao'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Crua Laranja', 'Encontrar uma descriçao'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Crua Amarela', 'Encontrar uma descriçao'] },
+    { foto: 'assets/fotos/c4.png', desc: ['Crua Cinza', 'Encontrar uma descriçao'] },
+  ];
 
+/*
   src_00 = 'assets/fotos/c4.png'
   topico_00 = [
     'Grão-Mestre',
@@ -244,5 +281,5 @@ export class GraduacoesComponent {
     'Crua Cinza ',
     'Encontrar uma descriçao'
   ]
-
+*/
 }

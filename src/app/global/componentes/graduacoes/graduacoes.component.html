@@ -1,9 +1,5 @@
 <div class="container  ">
-
-
-
   <div class="row align-items-start">
-
     <div class="col ">
       <div class="mt-5 mb-3">
         <h4 class="text-center">SIGNIFICADO DAS CORES CAPOEIRA</h4>
@@ -18,18 +14,13 @@
           <li><span class="bold">Vermelho</span> - {{desc1}}</li>
           <li><span class="bold">Vinho</span> - {{desc11}}</li>
           <li><span class="bold">Marron</span> - {{desc2}}</li>
-
           <li><span class="bold">Roxo</span> - {{desc3}}</li>
           <li><span class="bold">Azul</span> - {{desc4}}</li>
           <li><span class="bold">Verde</span> - {{desc5}}</li>
-
           <li><span class="bold">Laranja</span> - {{desc6}}</li>
           <li><span class="bold">Amarela</span> - {{desc7}}</li>
           <li><span class="bold">Cinza</span> - {{desc8}}</li>
         </ul>
-
-
-
       </div>
     </div>
   </div>
@@ -39,7 +30,10 @@
       <div class="mb-3 badge  ">
         <h5>Adultos</h5>
       </div>
-      <app-desc-grad [src]="src_00" [topicosArray]="topico_00"></app-desc-grad>
+      @for (item of list; track $index) {
+        <app-desc-grad [src]="item.foto" [topicosArray]="item.desc"></app-desc-grad>
+      }
+      <!--<app-desc-grad [src]="src_00" [topicosArray]="topico_00"></app-desc-grad>
       <app-desc-grad [src]="src_0" [topicosArray]="topico_0"></app-desc-grad>
       <app-desc-grad [src]="src_1" [topicosArray]="topico_1"></app-desc-grad>
       <app-desc-grad [src]="src_2" [topicosArray]="topico_2"></app-desc-grad>
@@ -61,15 +55,10 @@
         <h5>Intermédios</h5>
       </div>
       <app-desc-grad [src]="src_20" [topicosArray]="topico_20"></app-desc-grad>
-      <app-desc-grad [src]="src_21" [topicosArray]="topico_21"></app-desc-grad>
       <app-desc-grad [src]="src_22" [topicosArray]="topico_22"></app-desc-grad>
-      <app-desc-grad [src]="src_23" [topicosArray]="topico_23"></app-desc-grad>
       <app-desc-grad [src]="src_24" [topicosArray]="topico_24"></app-desc-grad>
-      <app-desc-grad [src]="src_25" [topicosArray]="topico_25"></app-desc-grad>
       <app-desc-grad [src]="src_26" [topicosArray]="topico_26"></app-desc-grad>
-      <app-desc-grad [src]="src_27" [topicosArray]="topico_27"></app-desc-grad>
       <app-desc-grad [src]="src_28" [topicosArray]="topico_28"></app-desc-grad>
-      <app-desc-grad [src]="src_29" [topicosArray]="topico_29"></app-desc-grad>
       <app-desc-grad [src]="src_30" [topicosArray]="topico_30"></app-desc-grad>
       <app-desc-grad [src]="src_31" [topicosArray]="topico_31"></app-desc-grad>
     </div>
@@ -85,5 +74,6 @@
       <app-desc-grad [src]="src_45" [topicosArray]="topico_45"></app-desc-grad>
       <app-desc-grad [src]="src_46" [topicosArray]="topico_46"></app-desc-grad>
     </div>
+    -->
   </div>
 </div>
