@@ -1,6 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
+.leaflet-container {
+  z-index: 1 !important;
+}
+
+.leaflet-pane {
+  z-index: 2 !important;
+}
+
+.leaflet-control {
+  z-index: 3 !important;
+}
+
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 3 !important;
+}
+
 html,
 body {
   height: 100%;
@@ -13,4 +30,4 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: whitesmoke;
 }
- 
+

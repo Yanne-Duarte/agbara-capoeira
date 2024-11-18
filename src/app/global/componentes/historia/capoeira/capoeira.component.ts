@@ -62,5 +62,41 @@ export class CapoeiraComponent {
   foto = 'assets/fotos/berimbau.png';
 
 
-  crono = [];
+  eventos = [
+    {
+      ano: '1500s',
+      titulo: 'Origem da Capoeira',
+      descricao: 'Surgimento da capoeira entre os escravos africanos no Brasil colonial.'
+    },
+    {
+      ano: '1890',
+      titulo: 'Proibição',
+      descricao: 'A capoeira é proibida pelo Código Penal da República.'
+    },
+    {
+      ano: '1932',
+      titulo: 'Primeira Academia',
+      descricao: 'Mestre Bimba funda a primeira academia de capoeira em Salvador.'
+    },
+    {
+      ano: '1937',
+      titulo: 'Legalização',
+      descricao: 'A capoeira é oficialmente legalizada pelo governo Getúlio Vargas.'
+    },
+    {
+      ano: '1953',
+      titulo: 'Apresentação Histórica',
+      descricao: 'Mestre Bimba apresenta a capoeira para o presidente Getúlio Vargas.'
+    },
+    {
+      ano: '2008',
+      titulo: 'Patrimônio Cultural',
+      descricao: 'A capoeira é reconhecida como Patrimônio Cultural Imaterial do Brasil.'
+    },
+    {
+      ano: '2014',
+      titulo: 'Patrimônio da Humanidade',
+      descricao: 'UNESCO declara a roda de capoeira como Patrimônio Cultural Imaterial da Humanidade.'
+    }
+  ];
 }

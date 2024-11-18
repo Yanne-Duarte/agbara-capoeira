@@ -25,13 +25,15 @@ import { DescGradComponent } from './componentes/estrutura/desc-grad/desc-grad.c
 import { InstrumentosComponent } from './componentes/historia/instrumentos/instrumentos.component';
 import { CarrouselComponent } from './componentes/estrutura/carrousel/carrousel.component';
 import { ModalComponent } from './componentes/estrutura/modal/modal.component';
+import 'leaflet';
+
 @NgModule({
   imports: [
     CommonModule,
     MatMenuModule,
     BrowserModule,
-    MatListModule
-,MatSidenavModule
+    MatListModule,
+    MatSidenavModule
   ],
   declarations: [
     GlobalComponent,

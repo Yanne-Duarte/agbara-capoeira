@@ -1,2 +1,29 @@
+<div class="historia-container">
+  <div class="container-fluid">
+    <div class="header-section">
+      <h1>História da Capoeira</h1>
+    </div>
 
-<app-card-texto [texto]="txtArray" [half]="false" [foto]="foto"></app-card-texto>
+    <div class="timeline-container">
+      <!-- Linha central -->
+      <div class="timeline-line"></div>
+
+      <!-- Eventos -->
+      <div class="timeline-items">
+        <div class="timeline-item" *ngFor="let evento of eventos; let i = index" [ngClass]="{'left': i % 2 === 0, 'right': i % 2 !== 0}">
+          <div class="timeline-content">
+            <div class="date">{{ evento.ano }}</div>
+            <div class="content">
+              <h3>{{ evento.titulo }}</h3>
+              <p>{{ evento.descricao }}</p>
+            </div>
+          </div>
+          <!-- Círculo indicador -->
+          <div class="timeline-dot">
+            <img src="assets/fotos/berimbau.png" alt="Berimbau">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

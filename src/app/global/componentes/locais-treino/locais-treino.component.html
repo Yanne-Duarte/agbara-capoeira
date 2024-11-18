@@ -1,22 +1,28 @@
-<div class=" mrg">
-  <!--<app-card-texto [texto]="espacoNininho" [foto]="fotoN" [half]="true"></app-card-texto>
-  <app-card-texto [texto]="espacoBandas" [foto]="fotoB" [half]="true"></app-card-texto>
-  <app-card-texto [texto]="espacoBarravento" [foto]="fotoBV" [half]="true"></app-card-texto>-->
-
-
-  <div class="container-fluid  ">
-
-    <div class="row ">
-
-      <div class="box col" *ngFor="let item of locais">
+<div class="mrg">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="box col-lg-4 col-md-6 col-12" *ngFor="let item of locais; let i = index">
         <div class="text-bold">{{ item.local }}</div>
-        <img [src]="item.foto" alt="" class="img">
-        <div >{{ item.nome }}</div>
-        <div><i class="bi bi-phone"></i> {{ item.contacto }}</div>
-        <div><i class="bi bi-geo-alt"></i> {{ item.Morada }}</div>
-        <div><i class="bi bi-clock"></i> {{ item.horario }}</div>
+        <div class="map-container" [id]="'map' + i"></div>
+        <div class="info-container">
+          <div class="info-item">
+            <i class="bi bi-person-circle"></i>
+            <span>{{ item.nome }}</span>
+          </div>
+          <div class="info-item">
+            <i class="bi bi-phone"></i>
+            <span>{{ item.contacto }}</span>
+          </div>
+          <div class="info-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>{{ item.Morada }}</span>
+          </div>
+          <div class="info-item">
+            <i class="bi bi-clock"></i>
+            <span>{{ item.horario }}</span>
+          </div>
+        </div>
       </div>
-
     </div>
-
   </div>
+</div>
