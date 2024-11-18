@@ -20,25 +20,53 @@
         </div>
       </div>
     </div>
-
-    <div class="expand-button-container">
-      <button class="expand-button" (click)="toggleShowAll()">
-        {{ showAllColors ? 'Ver menos' : 'Ver mais' }}
-      </button>
-    </div>
   </section>
 
   <!-- Seção de Graduações -->
   <section class="graduacoes-section">
-    <div class="tabs-container">
-      <div class="tab-buttons">
-        <button class="tab-btn active">Adultos</button>
+    <div class="section-header">
+      <h2 class="section-title">Graduações</h2>
+      <div class="title-underline"></div>
+    </div>
+
+    <div class="categorias-grid">
+      <!-- Adultos -->
+      <div class="categoria-container">
+        <div class="categoria-header">
+          <h3>Adultos</h3>
+          <div class="categoria-underline"></div>
+        </div>
+        <div class="graduacoes-list">
+          @for (item of list.adultos; track $index) {
+            <app-desc-grad [src]="item.foto" [topicosArray]="item.desc" class="grad-card"></app-desc-grad>
+          }
+        </div>
       </div>
 
-      <div class="graduacoes-grid">
-        @for (item of list; track $index) {
-          <app-desc-grad [src]="item.foto" [topicosArray]="item.desc" class="grad-card"></app-desc-grad>
-        }
+      <!-- Intermédios -->
+      <div class="categoria-container">
+        <div class="categoria-header">
+          <h3>Intermédios</h3>
+          <div class="categoria-underline"></div>
+        </div>
+        <div class="graduacoes-list">
+          @for (item of list.intermedios; track $index) {
+            <app-desc-grad [src]="item.foto" [topicosArray]="item.desc" class="grad-card"></app-desc-grad>
+          }
+        </div>
+      </div>
+
+      <!-- Crianças -->
+      <div class="categoria-container">
+        <div class="categoria-header">
+          <h3>Crianças</h3>
+          <div class="categoria-underline"></div>
+        </div>
+        <div class="graduacoes-list">
+          @for (item of list.crianca; track $index) {
+            <app-desc-grad [src]="item.foto" [topicosArray]="item.desc" class="grad-card"></app-desc-grad>
+          }
+        </div>
       </div>
     </div>
   </section>

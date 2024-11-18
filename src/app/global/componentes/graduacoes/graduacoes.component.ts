@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
 
+interface Cor {
+  nome: string;
+  desc: string;
+  bg: string;
+  text: string;
+  expanded?: boolean;
+}
+
 @Component({
   selector: 'app-graduacoes',
   templateUrl: './graduacoes.component.html',
   styleUrl: './graduacoes.component.scss'
 })
 export class GraduacoesComponent {
-
-
 
   desc0 = 'A cor branca é a mais pura de todas, representa à pureza. É a cor mais protetora, contribui para à paz e ao conforto, alivia a sensação de desespero e de choque emocional, ajuda a limpar e aclarar as emoções, os pensamentos e a espírito.'
   desc1 = 'O vermelho simboliza o poder, é a cor que se associa com a vitalidade e a ambição. O vermelho contribui também para a confiança em si mesmo, a coragem e uma atitude otimista ante a vida. palavras-chave da cor vermelha são: atração, amor, paixão e desejo. '
@@ -20,70 +26,80 @@ export class GraduacoesComponent {
   desc7 = 'A cor amarela contribui para a felicidade. É uma cor brilhante, alegre, que simboliza a luxe - é come estar em festa a cada dia. Assecia-se com a parte intelectual da mente e a expressão de nesses pensamentos. É pertanto, a poder de discernir e discriminar, a memória e as ideias daras, poder de decisão e capacidade de julgar. Jambém nes ajuda a erganizar-nos, a assimilar as idcias inovadoras, e contribui para a habilidade de ver e compreender es diferentes pontos de vista. Palamas-chaves da cor amarda: felicidade, alegria, inteligência, inovação, energia, sol, fortaleza, poder.'
   desc8 = 'A cor cinza está asseciada à independência, à luta suficiência, as autocontrole: É uma cer que atua como um escudo contra as influências externas. Há palavras-chaves da cor cinza é, Estabilidade, Generosidade, Grande cense de organização, Detes humanitários, iselamento e Independência'
 
+  showAllColors = false;
+  itemsPerRow = 5;
+  initialRows = 4;
 
-  list = [
-    { foto: 'assets/fotos/c4.png', desc: ['Grão-Mestre', 'Branco', 'Um Mestre é um Mestre'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Mestre', 'Vermelho', 'Um Mestre é um Mestre'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Contramestre', 'Branco-Vermelho', 'Um ContraMestre é um ContraMestre'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Professor', 'Marrom', 'Um professor é um professor'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Roxo-Marrom', 'Em estágio'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Roxo', 'Um Aluno graduado procura do que é ser mestre de capoeira'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Azul-Roxo', 'Em estágio'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Azul', 'Encontrar uma descriçao'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Verde-Azul', 'Em estágio'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Verde', 'Encontrar uma descriçao'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Laranja-Verde', 'Em estágio'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Laranja', 'Em estágio'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Amarela-Laranja', 'Encontrar uma descriçao'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Amarela', 'Em estágio'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Cinza-Amarela', 'Encontrar uma descriçao'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Cinza', 'Aluno adulto iniciante'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Ponta Marrom', 'Encontrar uma descriçao'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Ponta Marrom-Roxo', 'Em estágio'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Ponta Roxa', 'Encontrar uma descriçao'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Ponta Azul-Roxo', 'Em estágio'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Ponta Azul', 'Encontrar uma descriçao'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Ponta Verde-Azul', 'Em estágio'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Ponta Verde', 'Encontrar uma descriçao'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Ponta Laranja-Verde', 'Em estágio'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Ponta Laranja', 'Encontrar uma descriçao'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Ponta Amarela-Laranja', 'Em estágio'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Ponta Amarela', 'Encontrar uma descriçao'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Ponta Cinza', 'Encontrar uma descriçao'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Crua Marrom', 'Encontrar uma descriçao'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Crua Roxa', 'Encontrar uma descriçao'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Crua Azul', 'Encontrar uma descriçao'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Crua Verde', 'Encontrar uma descriçao'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Crua Laranja', 'Encontrar uma descriçao'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Crua Amarela', 'Encontrar uma descriçao'] },
-    { foto: 'assets/fotos/c4.png', desc: ['Crua Cinza', 'Encontrar uma descriçao'] },
+  list = {
+    adultos: [
+      { foto: 'assets/fotos/c4.png', desc: ['Grão-Mestre', 'Branco', 'Um Mestre é um Mestre'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Mestre', 'Vermelho', 'Um Mestre é um Mestre'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Contramestre', 'Branco-Vermelho', 'Um ContraMestre é um ContraMestre'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Professor', 'Marrom', 'Um professor é um professor'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Roxo-Marrom', 'Em estágio'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Roxo', 'Um Aluno graduado procura do que é ser mestre de capoeira'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Azul-Roxo', 'Em estágio'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Azul', 'Encontrar uma descriçao'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Verde-Azul', 'Em estágio'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Verde', 'Encontrar uma descriçao'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Laranja-Verde', 'Em estágio'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Laranja', 'Em estágio'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Amarela-Laranja', 'Encontrar uma descriçao'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Amarela', 'Em estágio'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Cinza-Amarela', 'Encontrar uma descriçao'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Cinza', 'Aluno adulto iniciante'] },
+    ],
+    intermedios: [
+      { foto: 'assets/fotos/c4.png', desc: ['Ponta Marrom', 'Encontrar uma descriçao'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Ponta Marrom-Roxo', 'Em estágio'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Ponta Roxa', 'Encontrar uma descriçao'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Ponta Azul-Roxo', 'Em estágio'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Ponta Azul', 'Encontrar uma descriçao'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Ponta Verde-Azul', 'Em estágio'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Ponta Verde', 'Encontrar uma descriçao'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Ponta Laranja-Verde', 'Em estágio'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Ponta Laranja', 'Encontrar uma descriçao'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Ponta Amarela-Laranja', 'Em estágio'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Ponta Amarela', 'Encontrar uma descriçao'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Ponta Cinza', 'Encontrar uma descriçao'] },
+    ],
+    crianca: [
+      { foto: 'assets/fotos/c4.png', desc: ['Crua Marrom', 'Encontrar uma descriçao'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Crua Roxa', 'Encontrar uma descriçao'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Crua Azul', 'Encontrar uma descriçao'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Crua Verde', 'Encontrar uma descriçao'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Crua Laranja', 'Encontrar uma descriçao'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Crua Amarela', 'Encontrar uma descriçao'] },
+      { foto: 'assets/fotos/c4.png', desc: ['Crua Cinza', 'Encontrar uma descriçao'] },
+    ],
+  };
+
+
+  visibleCores: Cor[] = [
+    { nome: 'Branco', desc: this.desc0, bg: '#FFFFFF', text: '#000000' },
+    { nome: 'Vermelho', desc: this.desc1, bg: '#FF0000', text: '#FFFFFF' },
+    { nome: 'Vinho', desc: this.desc11, bg: '#722F37', text: '#FFFFFF' },
+    { nome: 'Marrom', desc: this.desc2, bg: '#8B4513', text: '#FFFFFF' },
+    { nome: 'Roxo', desc: this.desc3, bg: '#800080', text: '#FFFFFF' },
+    { nome: 'Azul', desc: this.desc4, bg: '#0000FF', text: '#FFFFFF' },
+    { nome: 'Verde', desc: this.desc5, bg: '#008000', text: '#FFFFFF' },
+    { nome: 'Laranja', desc: this.desc6, bg: '#FFA500', text: '#000000' },
+    { nome: 'Amarela', desc: this.desc7, bg: '#FFFF00', text: '#000000' },
+    { nome: 'Cinza', desc: this.desc8, bg: '#808080', text: '#FFFFFF' }
   ];
 
-  showAllColors = false;
-  itemsPerRow = 5; // número de items por linha
-  initialRows = 4; // número inicial de linhas para mostrar
-
-  get visibleCores() {
-    const cores = [
-      {nome: 'Branco', desc: this.desc0, bg: '#FFFFFF', text: '#000000'},
-      {nome: 'Vermelho', desc: this.desc1, bg: '#FF0000', text: '#FFFFFF'},
-      {nome: 'Vinho', desc: this.desc11, bg: '#722F37', text: '#FFFFFF'},
-      {nome: 'Marrom', desc: this.desc2, bg: '#8B4513', text: '#FFFFFF'},
-      {nome: 'Roxo', desc: this.desc3, bg: '#800080', text: '#FFFFFF'},
-      {nome: 'Azul', desc: this.desc4, bg: '#0000FF', text: '#FFFFFF'},
-      {nome: 'Verde', desc: this.desc5, bg: '#008000', text: '#FFFFFF'},
-      {nome: 'Laranja', desc: this.desc6, bg: '#FFA500', text: '#000000'},
-      {nome: 'Amarela', desc: this.desc7, bg: '#FFFF00', text: '#000000'},
-      {nome: 'Cinza', desc: this.desc8, bg: '#808080', text: '#FFFFFF'}
-    ];
-
+  getVisibleCores(): Cor[] {
     if (this.showAllColors) {
-      return cores;
+      return this.visibleCores;
     }
-    return cores.slice(0, this.itemsPerRow * this.initialRows);
+    return this.visibleCores.slice(0, this.itemsPerRow * this.initialRows);
   }
 
-  toggleShowAll() {
+  toggleShowAll(): void {
     this.showAllColors = !this.showAllColors;
+  }
+
+  toggleCard(cor: Cor): void {
+    cor.expanded = !cor.expanded;
   }
 }
