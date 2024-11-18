@@ -1,4 +1,29 @@
-<div class="mt-5 mb-5">
-  <!--  [nome]="'Mestre Nininho'"-->
-  <app-card-texto [texto]="txtArray" [half]="false" [foto]="foto"></app-card-texto>
+<div class="mestre-container">
+  <div class="container-fluid">
+    <!-- Header com título -->
+    <div class="header-section">
+      <h1>Mestre Nininho</h1>
+      <div class="title-line"></div>
+    </div>
+
+    <!-- Seção principal -->
+    <div class="content-wrapper">
+      <!-- Imagem do Mestre -->
+      <div class="image-section">
+        <div class="image-container">
+          <img [src]="foto" alt="Mestre Nininho" class="mestre-image">
+          <div class="image-overlay"></div>
+        </div>
+      </div>
+
+      <!-- Biografia -->
+      <div class="bio-section">
+        <div class="bio-content">
+          <div class="text-block" *ngFor="let texto of txtArray; let i = index">
+            <p [class.highlight]="i === 0">{{ texto }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

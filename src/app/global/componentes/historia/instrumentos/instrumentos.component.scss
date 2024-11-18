@@ -1,0 +1,168 @@
+.instrumentos-container {
+  margin-top: 100px;
+  padding: 20px;
+  background: #fff;
+}
+
+.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 50px;
+
+  h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .title-line {
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+}
+
+.instrumento-section {
+  padding: 30px 0;
+  margin-bottom: 30px;
+
+  &.reverse .content-wrapper {
+    flex-direction: row-reverse;
+  }
+}
+
+.content-wrapper {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.image-section {
+  flex: 0 0 35%;
+  max-width: 350px;
+
+  .instrumento-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-color: #f8f9fa;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}
+
+.text-section {
+  flex: 0 0 65%;
+
+  h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 12px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, #3498db, #2ecc71);
+      border-radius: 2px;
+    }
+  }
+
+  .text-content {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444;
+    text-align: justify;
+  }
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #3498db, transparent);
+  margin: 10px auto;
+  width: 70%;
+  opacity: 0.2;
+}
+
+// Responsividade
+@media screen and (max-width: 992px) {
+  .content-wrapper {
+    flex-direction: column !important;
+    gap: 30px;
+  }
+
+  .image-section {
+    max-width: 300px;
+    margin: 0 auto;
+
+    .instrumento-image {
+      max-height: 400px;
+    }
+  }
+
+  .text-section {
+    width: 100%;
+    text-align: center;
+
+    h2 {
+      &:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .instrumentos-container {
+    padding: 15px;
+  }
+
+  .header-section h1 {
+    font-size: 2rem;
+  }
+
+  .text-section {
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    .text-content {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .image-section .instrumento-image {
+    height: 200px;
+  }
+
+  .text-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .image-section {
+    max-width: 250px;
+  }
+}

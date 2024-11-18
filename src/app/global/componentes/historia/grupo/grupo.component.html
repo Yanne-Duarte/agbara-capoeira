@@ -1,3 +1,21 @@
-<div class="mt-5 mb-5">
-  <app-card-texto [texto]="txtArray" [half]="false" [foto]="foto"></app-card-texto>
+<div class="grupo-container">
+  <div class="container-fluid">
+    <!-- Seção principal com imagem e texto -->
+    <div class="main-section">
+      <!-- Imagem do grupo -->
+      <div class="image-section">
+        <img [src]="foto" alt="Grupo Agbara" class="group-image">
+      </div>
+
+      <!-- Conteúdo textual -->
+      <div class="content-section">
+        <h1>Grupo Agbara</h1>
+        <div class="text-content">
+          <div *ngFor="let texto of txtArray">
+            <p>{{ texto }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

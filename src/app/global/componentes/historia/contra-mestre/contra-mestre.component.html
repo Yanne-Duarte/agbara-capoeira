@@ -1,10 +1,39 @@
-<div class="mt-5 mb-5">
-  <!-- [nome]="'Contramestre Bandas'"-->
-  <app-card-texto  [texto]="txtBandas" [half]="false" [foto]="fotoBandas"></app-card-texto>
-</div>
+<div class="contra-mestre-container">
+  <!-- Seção Contra Mestre Bandas -->
+  <div class="profile-section">
+    <div class="container">
+      <div class="profile-content">
+        <div class="image-wrapper">
+          <img [src]="fotoBandas" alt="Contra Mestre Bandas" class="profile-image">
+        </div>
+        <div class="text-content">
+          <h2>{{ txtBandas[0] }}</h2>
+          <div class="text-wrapper">
+            <p *ngFor="let texto of txtBandas.slice(2)">{{ texto }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="mt-5 mb-5">
-  <!--  [nome]="'Contramestre Barravento'"-->
-  <app-card-texto [texto]="txtBarravento" [half]="false" [foto]="fotoBarravento"></app-card-texto>
+  <!-- Divisor -->
+  <div class="divider"></div>
+
+  <!-- Seção Contra Mestre Barravento -->
+  <div class="profile-section reverse">
+    <div class="container">
+      <div class="profile-content">
+        <div class="image-wrapper">
+          <img [src]="fotoBarravento" alt="Contra Mestre Barravento" class="profile-image">
+        </div>
+        <div class="text-content">
+          <h2>{{ txtBarravento[0] }}</h2>
+          <div class="text-wrapper">
+            <p *ngFor="let texto of txtBarravento.slice(2)">{{ texto }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 

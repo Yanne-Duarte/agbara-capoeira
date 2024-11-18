@@ -1,5 +1,60 @@
-<div>
-  <app-card-texto [half]="false" [foto]="fBerimbau" [texto]="berimbau"></app-card-texto>
-  <app-card-texto [half]="false" [foto]="fAtabaque" [texto]="atabaque"></app-card-texto>
-  <app-card-texto [half]="false" [foto]="fPandeiro" [texto]="pandeiro"></app-card-texto>
+<div class="instrumentos-container">
+  <div class="container-fluid">
+    <!-- Header -->
+    <div class="header-section">
+      <h1>Instrumentos da Capoeira</h1>
+      <div class="title-line"></div>
+    </div>
+
+    <!-- Seção Berimbau -->
+    <div class="instrumento-section">
+      <div class="content-wrapper">
+        <div class="image-section">
+          <img [src]="fBerimbau" alt="Berimbau" class="instrumento-image">
+        </div>
+        <div class="text-section">
+          <h2>Berimbau</h2>
+          <div class="text-content">
+            {{ berimbau.join(' ') }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divisor -->
+    <div class="divider"></div>
+
+    <!-- Seção Atabaque -->
+    <div class="instrumento-section reverse">
+      <div class="content-wrapper">
+        <div class="image-section">
+          <img [src]="fAtabaque" alt="Atabaque" class="instrumento-image">
+        </div>
+        <div class="text-section">
+          <h2>Atabaque</h2>
+          <div class="text-content">
+            {{ atabaque.join(' ') }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divisor -->
+    <div class="divider"></div>
+
+    <!-- Seção Pandeiro -->
+    <div class="instrumento-section">
+      <div class="content-wrapper">
+        <div class="image-section">
+          <img [src]="fPandeiro" alt="Pandeiro" class="instrumento-image">
+        </div>
+        <div class="text-section">
+          <h2>Pandeiro</h2>
+          <div class="text-content">
+            {{ pandeiro.join(' ') }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

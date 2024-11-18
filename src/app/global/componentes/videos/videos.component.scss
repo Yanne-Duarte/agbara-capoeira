@@ -1,53 +1,136 @@
-.grid-item {
-  width: 100%;
-}
-.mrg {
+.videos-container {
   margin-top: 100px;
+  padding: 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
 }
 
-.grid {
+.container-fluid {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 50px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+
+  h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .title-line {
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+}
+
+.videos-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-justify-content: space-between;
-text-align: center;
-
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
 }
-.you-tube {
-  width: 490px;
-  height: 315px;
+
+.video-item {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.2}s;
+    }
+  }
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; // Proporção 16:9
+  background: #000;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}
+
+// Animações
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsividade
+@media screen and (max-width: 1200px) {
+  .videos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (max-width: 992px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .you-tube {
-    gap: 20px;
-    width: 470px;
-    height: 315px;
+  .header-section h1 {
+    font-size: 2.2rem;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(1, 1fr);
+  .videos-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .you-tube {
-    margin-inline: 15px;
-    width: 95%;
-    height: 371px;
+  .header-section {
+    margin-bottom: 30px;
+
+    h1 {
+      font-size: 2rem;
+    }
   }
 }
-@media screen and (max-width: 567px) {
-  .grid {
-    grid-template-columns: repeat(1, 1fr);
+
+@media screen and (max-width: 576px) {
+  .videos-container {
+    padding: 15px;
   }
 
-  .you-tube {
-    margin-inline: 5px;
-    width: 96%;
-    height: 243px;
+  .header-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .videos-grid {
+    gap: 15px;
   }
 }
