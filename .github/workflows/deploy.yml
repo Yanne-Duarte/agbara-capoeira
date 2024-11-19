@@ -1,0 +1,36 @@
+name: Deploy Angular to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Ou a branch que você utiliza para deploy
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout do código
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Configuração do Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "17" # Certifique-se de usar uma versão LTS compatível
+
+      # Instalar dependências
+      - name: Install Dependencies
+        run: npm install
+
+      # Build do projeto Angular
+      - name: Build Project
+        run: npm run build --prod
+
+      # Deploy para GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist # Certifique-se de que este é o diretório correto
