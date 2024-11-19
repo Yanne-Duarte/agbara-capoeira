@@ -1,29 +1,34 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # ou master, dependendo da sua branch principal
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout do código
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Configuração do Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x' # Certifique-se de usar pelo menos v18.13
+          node-version: '18.x'
 
-      # Instalar dependências
       - name: Install Dependencies
         run: npm install
 
-      # Build do projeto Angular
       - name: Build Project
         run: npm run build --configuration production
 
-      # Deploy para GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/agbara-capoeira
+          enable_jekyll: false
+          cname: # se você tiver um domínio personalizado
+          commit_message: "Deploy to GitHub Pages"
