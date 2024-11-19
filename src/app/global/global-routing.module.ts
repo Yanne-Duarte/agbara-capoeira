@@ -50,6 +50,7 @@ const routes: Routes = [
   { path: 'eventos', component: EventosComponent },
   { path: 'contactos', component: ContactosComponent },
 
+  { path: '**', redirectTo: 'agbara', pathMatch: 'full' }
 
 ];
 
