@@ -7,7 +7,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Configuração do Node.js (defina uma versão compatível)
+      # Configuração do Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -19,11 +19,11 @@ jobs:
 
       # Build do projeto Angular
       - name: Build Project
-        run: npm run build --prod
+        run: npm run build --configuration production
 
       # Deploy para GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/<nome-do-seu-projeto>
+          publish_dir: ./dist/agbara-capoeira
