@@ -8,6 +8,15 @@ on:
 permissions:
   contents: write
 
+env:
+  DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+
+- name: Set up SSH key
+  run: |
+    mkdir -p ~/.ssh
+    echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_rsa
+    chmod 600 ~/.ssh/id_rsa
+
 jobs:
   build:
     runs-on: ubuntu-latest
