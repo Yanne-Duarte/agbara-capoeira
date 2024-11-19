@@ -31,10 +31,3 @@ pages:
   only:
     - main # Ou a branch que você usa para deploy
     - pages
-
-deploy:
-  stage: deploy
-  script:
-    - echo "Deploy stage"
-  only:
-    - master  # ou main, dependendo da sua branch principal
