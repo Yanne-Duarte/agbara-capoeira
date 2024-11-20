@@ -16,42 +16,34 @@ import { LocaisTreinoComponent } from './componentes/locais-treino/locais-treino
 import { LojaComponent } from './componentes/loja/loja.component';
 import { VideosComponent } from './componentes/videos/videos.component';
 
-import { GlobalComponent } from './global.component';
-
 const routes: Routes = [
+  // Página inicial
+  { path: '', component: AgbaraComponent },
 
-
- // { path: '', component: GlobalComponent },
-  { path: '', redirectTo: 'agbara', pathMatch: 'full' },
-
-  { path: 'agbara', component: AgbaraComponent },
-  {
-    path:'historia',
-    children:[
-      { path: 'capoeira', component: CapoeiraComponent },
-      { path: 'grupo', component: GrupoComponent },
-      { path: 'mestre', component: MestreComponent },
-      { path: 'contra-mestre', component: ContraMestreComponent },
-      { path: 'professor', component: ProfessorComponent },
-      { path: 'instrumentacao', component: InstrumentosComponent },
-    ]
-  },
- /* { path: 'capoeira', component: CapoeiraComponent },
-  { path: 'grupo', component: GrupoComponent },
-  { path: 'mestre', component: MestreComponent },
-  { path: 'contra-mestre', component: ContraMestreComponent },
-  { path: 'professor', component: ProfessorComponent },*/
-
+  // Rotas principais
   { path: 'graduacao', component: GraduacoesComponent },
-  { path: 'locais-de-treino', component: LocaisTreinoComponent },
+  { path: 'treinos', component: LocaisTreinoComponent },
   { path: 'videos', component: VideosComponent },
   { path: 'fotos', component: FotosComponent },
   { path: 'loja', component: LojaComponent },
   { path: 'eventos', component: EventosComponent },
   { path: 'contactos', component: ContactosComponent },
 
-  { path: '**', redirectTo: 'agbara', pathMatch: 'full' }
+  // Rotas de história
+  {
+    path: 'historia',
+    children: [
+      { path: '', component: CapoeiraComponent },
+      { path: 'grupo', component: GrupoComponent },
+      { path: 'mestre', component: MestreComponent },
+      { path: 'contra-mestre', component: ContraMestreComponent },
+      { path: 'professor', component: ProfessorComponent },
+      { path: 'instrumentos', component: InstrumentosComponent },
+    ]
+  },
 
+  // Rota 404
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

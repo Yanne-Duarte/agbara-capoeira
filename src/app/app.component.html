@@ -1,7 +1,7 @@
 <nav class="fixar-nav navbar navbar-expand-lg">
   <div class="container-fluid">
     <!-- Logo -->
-    <a class="navbar-brand" routerLink="/agbara">
+    <a class="navbar-brand" routerLink="/">
       <img src="assets/fotos/8.jpg" width="60" height="60" alt="Logo Agbara Capoeira" title="Agbara Capoeira">
     </a>
 
@@ -17,12 +17,12 @@
         <li class="nav-item">
           <span class="nav-link" [matMenuTriggerFor]="historia" (click)="closeMenu()">História</span>
           <mat-menu #historia="matMenu">
-            <button mat-menu-item routerLink="/historia/capoeira" (click)="closeMenu()">Capoeira</button>
+            <button mat-menu-item routerLink="/historia" (click)="closeMenu()">Capoeira</button>
             <button mat-menu-item routerLink="/historia/grupo" (click)="closeMenu()">Grupo Agbara</button>
             <button mat-menu-item routerLink="/historia/mestre" (click)="closeMenu()">Mestre Nininho</button>
             <button mat-menu-item routerLink="/historia/contra-mestre" (click)="closeMenu()">Contramestres</button>
             <button mat-menu-item routerLink="/historia/professor" (click)="closeMenu()">Professores</button>
-            <button mat-menu-item routerLink="/historia/instrumentacao" (click)="closeMenu()">Instrumentação</button>
+            <button mat-menu-item routerLink="/historia/instrumentos" (click)="closeMenu()">Instrumentação</button>
           </mat-menu>
         </li>
         <li class="nav-item">
@@ -41,7 +41,7 @@
           <a class="nav-link" routerLink="/eventos" (click)="closeMenu()">Eventos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/locais-de-treino" (click)="closeMenu()">Locais de treino</a>
+          <a class="nav-link" routerLink="/treinos" (click)="closeMenu()">Locais de treino</a>
         </li>
       </ul>
     </div>
@@ -78,7 +78,7 @@
           <li><a routerLink="/historia/grupo">Sobre Nós</a></li>
           <li><a routerLink="/graduacao">Graduações</a></li>
           <li><a routerLink="/eventos">Eventos</a></li>
-          <li><a routerLink="/locais-de-treino">Locais de Treino</a></li>
+          <li><a routerLink="/treinos">Locais de Treino</a></li>
         </ul>
       </div>
 
