@@ -21,11 +21,13 @@ jobs:
           node-version: '18.x'
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          npm install
+          npm install -g @angular/cli
 
       - name: Build Project
         run: |
-          ng build --configuration production --base-href "https://seu-usuario.github.io/agbara-capoeira/"
+          npm run build -- --configuration production --base-href "https://seu-usuario.github.io/agbara-capoeira/"
           cp dist/agbara-capoeira/browser/index.html dist/agbara-capoeira/browser/404.html
 
       - name: Deploy to GitHub Pages
