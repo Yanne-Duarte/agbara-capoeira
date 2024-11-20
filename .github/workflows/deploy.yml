@@ -24,11 +24,13 @@ jobs:
         run: npm install
 
       - name: Build Project
-        run: npm run build:prod
+        run: |
+          ng build --configuration production --base-href "https://seu-usuario.github.io/agbara-capoeira/"
+          cp dist/agbara-capoeira/browser/index.html dist/agbara-capoeira/browser/404.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/agbara-capoeira
+          publish_dir: ./dist/agbara-capoeira/browser
           commit_message: "Deploy to GitHub Pages"
