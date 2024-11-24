@@ -324,3 +324,67 @@
     height: 80px;
   }
 }
+
+.dropdown {
+  position: relative;
+
+  .dropdown-toggle {
+    cursor: pointer;
+
+    &::after {
+      display: inline-block;
+      margin-left: 0.255em;
+      vertical-align: 0.255em;
+      content: "";
+      border-top: 0.3em solid;
+      border-right: 0.3em solid transparent;
+      border-bottom: 0;
+      border-left: 0.3em solid transparent;
+    }
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 0.25rem;
+
+    &.show {
+      display: block;
+    }
+  }
+
+  .dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    text-decoration: none;
+    color: #212529;
+
+    &:hover {
+      background-color: #f8f9fa;
+      color: #16181b;
+    }
+  }
+}
+
+// Para dispositivos móveis
+@media (max-width: 991.98px) {
+  .dropdown-menu {
+    position: static !important;
+    border: none !important;
+    padding-left: 1.5rem !important;
+    background-color: transparent !important;
+  }
+}

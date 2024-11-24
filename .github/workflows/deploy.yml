@@ -27,7 +27,7 @@ jobs:
 
       - name: Build Project
         run: |
-          npm run build -- --configuration production --base-href "https://seu-usuario.github.io/agbara-capoeira/"
+          ng build --configuration production
           cp dist/agbara-capoeira/browser/index.html dist/agbara-capoeira/browser/404.html
 
       - name: Deploy to GitHub Pages
